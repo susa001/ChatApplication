@@ -1,14 +1,12 @@
+import Register from "./Components/Register";
 
 
-function App() {
+function App() 
+{
   return (
-    <div className="flex  justify-center">
-      <h1 className=" text-3xl font-bold underline">
-         Hello world!
-     </h1>
-     <h1>
-      bye
-     </h1>
+    <div>
+      <Register/>
+     
     </div>
   );
 }
