@@ -1,4 +1,3 @@
-import LoginBgImage from "../Assets/LoginPageBackgrround.webp";
 
 const Register = () => {
   return (

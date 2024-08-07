@@ -1,48 +1,54 @@
-
-import React from 'react';
+import React from "react";
+import LoginImg from "../Assets/loginImg.jpg"
 
 const Login = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#b1b6b4]">
-      <div className="max-w-md w-full bg-[#8af1f5] rounded-lg shadow-md p-8">
-        <h2 className="text-2xl font-bold text-center mb-8">Login</h2>
-        <form clas>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" For="email">
-              Email
+    <>
+      <div className="flex items-center justify-center h-screen">
+        <div className="w-1/3"> 
+          <img src={LoginImg} className=""/>
+        </div>
+        <div className="space-y-4">
+          <div className="text-3xl font-bold">Welcome Back!</div>
+          <div className="">
+            <label className="block text-xl pb-3">
+              Email<span className="text-[#ff4040]">*</span>
             </label>
+
             <input
-              className="shadow-xl appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email"
               type="email"
-              placeholder="Email"
+              className="bg-gray-200 focus:outline-none p-2 w-full rounded-md"
             />
           </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" For="password">
-              Password
+          <div className="">
+            <label className="inline-block text-xl pb-3">
+              Password<span className="text-[#ff4040]">*</span>
             </label>
+            <br />
             <input
-              className="shadow-xl appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
               type="password"
-              placeholder="Password"
+              className="bg-gray-200 focus:outline-none p-2 w-full pr-[150px] rounded-md" 
             />
           </div>
-          <div className="flex items-center justify-between">
-            <button
-              className="shadow-[#636262] shadow-md   bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  "
-              type="button"
-            >
-              Sign In
+          <div className="pt-2">
+            <button className="bg-[#899eff] pb-2 pt-2 pr-5 pl-5 text-xl font-bold rounded-md">
+              Login
             </button>
-            <a className=" font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-              Forgot Password?
+          </div>
+          <div className="text-xs">
+            <span className="">Doesn't Have an Account</span>
+            <span> </span>
+            <a
+              href=""
+              className="text-blue-300 text-decoration-line: underline"
+            >
+              {" "}
+              Register here
             </a>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
