@@ -1,12 +1,12 @@
 import React from "react";
-import LoginImg from "../Assets/loginImg.jpg"
+import LoginImg from "../Assets/loginImg.jpg";
 
 const Login = () => {
   return (
     <>
-      <div className="flex items-center justify-center h-screen ">
-        <div className="w-96 mr-10"> 
-          <img src={LoginImg} className=""/>
+      <div className="flex space-x-5 items-center justify-center h-screen ">
+        <div className="w-1/3 ">
+          <img src={LoginImg} className="" />
         </div>
         <div className="space-y-4">
           <div className="text-3xl font-bold">Welcome Back!</div>
@@ -14,7 +14,6 @@ const Login = () => {
             <label className="block text-xl pb-3">
               Email<span className="text-[#ff4040]">*</span>
             </label>
-
             <input
               type="email"
               className="bg-gray-light focus:outline-none p-2 w-full rounded-md"
@@ -27,7 +26,7 @@ const Login = () => {
             <br />
             <input
               type="password"
-              className="bg-gray-light focus:outline-none p-2 w-full pr-[150px] rounded-md" 
+              className="bg-gray-light focus:outline-none p-2 w-full pr-[150px] rounded-md"
             />
           </div>
           <div className="pt-2">

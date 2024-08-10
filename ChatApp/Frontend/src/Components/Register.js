@@ -1,21 +1,15 @@
 import React from "react";
-import RegisterImg from "../Assets/registerpage.jpg"
+import RegisterImg from "../Assets/Registerpage.png"
 
 
 const Register = () => {
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
-       <div className="w-1/2 flex flex-col items-center"> 
-          <img src={RegisterImg} />
-          <div className="text-center ">
-            <p className="text-2xl font-bold">Flex Your Connections</p>
-            <p className="w-3/4 text-sm mt-2 mx-auto text-gray-dark">
-              Elevate your chats, build real bonds, and stay linked with your squad.
-            </p>
-          </div>
+      <div className="flex space-x-3 items-center justify-center h-screen">
+       <div className="w-1/3 flex flex-col items-center "> 
+          <img src={RegisterImg} className="" />
         </div>
-        <div className="space-y-3 -ml-10">
+        <div className="space-y-3">
           <div className="text-3xl font-bold text-center" >Create an Account</div>
           <div className="">
             <label className="block text-xl pb-2">
