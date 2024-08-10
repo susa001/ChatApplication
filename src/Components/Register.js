@@ -49,7 +49,7 @@ const Register = () => {
           </div>
           <div className="">
             <label className="inline-block text-xl pb-2">
-              Password<span className="text-[#ff4040]">*</span>
+              Password<span className="text-[#ff4040] ">*</span>
             </label>
             <br />
             <input

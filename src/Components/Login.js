@@ -4,7 +4,7 @@ import LoginImg from "../Assets/loginImg.jpg"
 const Login = () => {
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen ">
         <div className="w-96 mr-10 "> 
           <img src={LoginImg} className=""/>
         </div>
