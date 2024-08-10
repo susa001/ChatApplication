@@ -60,7 +60,7 @@ const Register = () => {
           <div className="flex items-center">
             <input
               type="checkbox"
-              id="privacy-policy"
+              id="privacy-policy "
               className="mr-2"
             />
             <label htmlFor="privacy-policy" className="text-sm">
