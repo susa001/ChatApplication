@@ -5,7 +5,7 @@ import RegisterImg from "../Assets/Registerpage.png"
 const Register = () => {
   return (
     <>
-      <div className="flex space-x-3 items-center justify-center h-screen">
+      <div className="flex space-x-10 items-center justify-center h-screen">
        <div className="w-1/3 flex flex-col items-center "> 
           <img src={RegisterImg} className="" />
         </div>

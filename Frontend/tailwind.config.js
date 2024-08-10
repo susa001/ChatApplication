@@ -24,7 +24,18 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
+      scrollbarHide: {
+        '&::-webkit-scrollbar': {
+          display: 'none',
+        },
+        '&': {
+          '-ms-overflow-style': 'none', /* IE and Edge */
+          'scrollbar-width': 'none', /* Firefox */
+        },
+      },
+   
+  
     }
   },
 }
