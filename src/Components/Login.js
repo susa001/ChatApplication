@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <>
       <div className="flex items-center justify-center h-screen">
-        <div className="w-1/3"> 
+        <div className="w-96 mr-10"> 
           <img src={LoginImg} className=""/>
         </div>
         <div className="space-y-4">
@@ -17,7 +17,7 @@ const Login = () => {
 
             <input
               type="email"
-              className="bg-gray-200 focus:outline-none p-2 w-full rounded-md"
+              className="bg-gray-light focus:outline-none p-2 w-full rounded-md"
             />
           </div>
           <div className="">
@@ -27,20 +27,20 @@ const Login = () => {
             <br />
             <input
               type="password"
-              className="bg-gray-200 focus:outline-none p-2 w-full pr-[150px] rounded-md" 
+              className="bg-gray-light focus:outline-none p-2 w-full pr-[150px] rounded-md" 
             />
           </div>
           <div className="pt-2">
-            <button className="bg-[#899eff] pb-2 pt-2 pr-5 pl-5 text-xl font-bold rounded-md">
+            <button className="bg-[#A1E7FF] pb-2 pt-2 pr-5 pl-5 text-xl font-bold rounded-md">
               Login
             </button>
           </div>
           <div className="text-xs">
-            <span className="">Doesn't Have an Account</span>
+            <span className="">Doesn't Have an Account?</span>
             <span> </span>
             <a
               href=""
-              className="text-blue-300 text-decoration-line: underline"
+              className="text-[#375C8F] text-decoration-line: underline"
             >
               {" "}
               Register here
