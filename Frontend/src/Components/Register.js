@@ -18,9 +18,9 @@ const Register = () => {
           userEmail: Email,
           userPassword: Password,
         })
-        .then("Data Send to backend");
+        .then(()=>console.log(response));
     } catch (e) {
-      console.log("Errror sending request" + " " + e.message);
+      
     }
   };
 

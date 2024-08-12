@@ -19,37 +19,40 @@ app.get("/", (req, res) => {
   res.send("welcome to backend");
 });
 
-
 //registeraation upadting  into data base-Fininshed
+
 app.post("/", async (req, res) => {
   const data = req.body;
   console.log(data.userMobileNo);
 
-  const newUser = new userSchema({
-    name: data.userName,
-    mobileno: data.userMobileNo,
-    email: data.userEmail,
-    password: data.userPassword,
-  });
+  try {
+    const newUser = new userSchema({
+      name: data.userName,
+      mobileno: data.userMobileNo,
+      email: data.userEmail,
+      password: data.userPassword,
+    });
 
-  console.log(newUser);
+    console.log(newUser);
 
-  newUser.save().then(() => {
-    console.log("Data added  ");
-  });
+    newUser.save().then(() => {
+      console.log("Data added  ");
+    });
+    res.status(201).json({ success: true, message: 'Registration successful' });
+  } catch (e) {
+    console.log(e.message);
+  }
 });
-
 
 //login validation - Pending
 app.post("/login", async (req, res) => {
-  const data = req.body
+  const data = req.body;
 
-  const UserMailorPhone=data.MailorPhone
-  const UserPassword=data.Password
+  const UserMailorPhone = data.MailorPhone;
+  const UserPassword = data.Password;
 
-  const user =await userSchema.findOne({UserMailorPhone})
-  console.log(user)
-  
+  const user = await userSchema.findOne({ UserMailorPhone });
+  console.log(user);
 });
 
 app.listen(8000, () => {
