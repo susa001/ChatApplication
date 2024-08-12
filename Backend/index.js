@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.post("/", async (req, res) => {
   const data = req.body;
-  console.log(data.userMobileNo);
+  console.log(data);
 
   try {
     const newUser = new userSchema({
@@ -35,7 +35,7 @@ app.post("/", async (req, res) => {
 
     console.log(newUser);
 
-    newUser.save().then(() => {
+    await newUser.save().then(() => {
       console.log("Data added  ");
     });
     res.status(201).json({ success: true, message: 'Registration successful' });
@@ -50,8 +50,8 @@ app.post("/login", async (req, res) => {
 
   const UserMailorPhone = data.MailorPhone;
   const UserPassword = data.Password;
-
-  const user = await userSchema.findOne({ UserMailorPhone });
+ 
+  const user = await userSchema.findOne({ $or: [{ email: UserMailorPhone }, { phone: UserMailorPhone }] });
   console.log(user);
 });
 
