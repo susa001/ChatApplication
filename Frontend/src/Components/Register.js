@@ -11,6 +11,7 @@ const Register = () => {
 
   const HandleRegister = async () => {
     try {
+      console.log("h0")
       const response = await axios
         .post("http://localhost:8000", {
           userName: Name,
@@ -18,9 +19,18 @@ const Register = () => {
           userEmail: Email,
           userPassword: Password,
         })
-        .then(()=>console.log(response));
+        console.log("h1")
+        if (response.status == 409)
+        {
+          console.log("h2")
+          alert("Email or mobile already in use")
+        }
+        else{
+          console.log("h3")
+          console.log(response.status)
+        }
     } catch (e) {
-      
+      console.log(e.message)
     }
   };
 
