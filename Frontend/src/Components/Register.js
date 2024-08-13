@@ -11,17 +11,29 @@ const Register = () => {
   const [Password, SetPassword] = useState();
   const navigate=useNavigate()
 
+
+  const [checkbox,Setcheckbox] =useState(0)
+  
+
   const HandleRegister = async () => {
     try {
+      if(checkbox%2 !=0) //checkbox validation
+      {
       const response = await axios.post("http://localhost:8000", {
         userName: Name,
         userMobileNo: MobileNo,
         userEmail: Email,
         userPassword: Password,
       });
+      
         navigate('/Registrationsuccessful')
         console.log(response.status);
-    } catch (e) {
+    }
+    else
+    {
+      alert('Please accept privacy policy')
+    }
+   } catch (e) {
       console.log("Error caught:", e);
       console.log("Error message:", e.message);
       if (e.response && e.response.status === 409) {
@@ -32,6 +44,11 @@ const Register = () => {
     }
   };
   
+
+
+
+
+
   return (
     <>
       <div className="flex space-x-10 items-center justify-center h-screen">
@@ -81,13 +98,13 @@ const Register = () => {
             </label>
             <br />
             <input
-              type="password"
+              type="text"
               className="bg-gray-light focus:outline-none p-2 w-full pr-[150px] rounded-md"
               onChange={(e) => SetPassword(e.target.value)}
             />
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="privacy-policy " className="mr-2" />
+            <span onClick={()=>{Setcheckbox(checkbox+1)}}><input type="checkbox" id="privacy-policy " className="mr-2 mt-2" /></span>
             <label htmlFor="privacy-policy" className="text-sm">
               I accept the{" "}
               <a
