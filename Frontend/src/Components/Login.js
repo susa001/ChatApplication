@@ -11,10 +11,14 @@ const Login = () => {
 
   const HandleLogin = async () => {
     try {
-      await axios.post("http://localhost:8000/login", {
+      const response=await axios.post("http://localhost:8000/login", {
         MailorPhone: userMail,
         Password: userPassword,
       });
+      console.log(response.status)
+      
+      //navigation to homepage
+      navigate('/Home')
     } catch (e) {
       console.log("Error in sedning" + " " + e.message);
     }

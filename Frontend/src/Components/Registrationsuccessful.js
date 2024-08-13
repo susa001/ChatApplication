@@ -4,7 +4,7 @@ import { useEffect } from "react";
 function Registrationsuccessful()
 {
   const navigate = useNavigate();
-
+//regestration successfull message page
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/");

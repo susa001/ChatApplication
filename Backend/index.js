@@ -65,6 +65,7 @@ app.post("/login", async (req, res) => {
  
   const user = await userSchema.findOne({ $or: [{ email: UserMailorPhone }, { phone: UserMailorPhone }] });
   console.log(user);
+  return res.status(200).json({success:true,message:"logged in successfully"})
 });
 
 app.listen(8000, () => {
