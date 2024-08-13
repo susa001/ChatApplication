@@ -19,13 +19,22 @@ app.get("/", (req, res) => {
   res.send("welcome to backend");
 });
 
-//registeraation upadting  into data base-Fininshed
+//registeration upadting  into data base-Fininshed
 
 app.post("/", async (req, res) => {
   const data = req.body;
   console.log(data);
 
   try {
+    const existingUser = await userSchema.findOne({ 
+      $or: [{ email: data.userEmail }, { mobileno: data.userMobileNo }] 
+    });
+    
+    if (existingUser) {
+      console.log("betta")
+      return res.status(409).json({ success: false, message: "Email or number already in use" });
+    }
+
     const newUser = new userSchema({
       name: data.userName,
       mobileno: data.userMobileNo,
@@ -36,13 +45,16 @@ app.post("/", async (req, res) => {
     console.log(newUser);
 
     await newUser.save().then(() => {
-      console.log("Data added  ");
+      console.log("Data added successfully");
     });
+    
     res.status(201).json({ success: true, message: 'Registration successful' });
   } catch (e) {
     console.log(e.message);
+    res.status(500).json({ success: false, message: 'An error occurred during registration' });
   }
 });
+
 
 //login validation - Pending
 app.post("/login", async (req, res) => {

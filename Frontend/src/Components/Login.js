@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import LoginImg from "../Assets/loginImg.jpg";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
   const [userMail, SetuserMail] = useState();
   const [userPassword, SetuserPasssword] = useState();
+  const navigate=useNavigate()
 
   const HandleLogin = async () => {
     try {
@@ -60,13 +63,12 @@ const Login = () => {
           </div>
           <div className="text-xs">
             <span className="">Doesn't Have an Account?</span>
-            <span> </span>
             <a
               href=""
               className="text-[#375C8F] text-decoration-line: underline"
+              onClick={()=>{navigate('/register')}}
             >
-              {" "}
-              Register here
+            Register here
             </a>
           </div>
         </div>
