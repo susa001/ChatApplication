@@ -63,9 +63,16 @@ app.post("/login", async (req, res) => {
   const UserMailorPhone = data.MailorPhone;
   const UserPassword = data.Password;
  
-  const user = await userSchema.findOne({ $or: [{ email: UserMailorPhone }, { phone: UserMailorPhone }] });
+  const user = await userSchema.findOne({ $or: [{ email: UserMailorPhone }, { mobileno: UserMailorPhone }] });
   console.log(user);
-  return res.status(200).json({success:true,message:"logged in successfully"})
+
+  if(user && user.password === UserPassword)
+  {
+    return res.status(200).json({success:true,message:"logged in successfully"})
+  }
+
+  return res.status(403).json({success:false,message:"logged in succesfully"})
+  
 });
 
 app.listen(8000, () => {

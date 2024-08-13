@@ -20,7 +20,7 @@ const Login = () => {
       //navigation to homepage
       navigate('/Home')
     } catch (e) {
-      console.log("Error in sedning" + " " + e.message);
+      alert("invalid user")
     }
   };
 
