@@ -2,38 +2,36 @@ import React from "react";
 import RegisterImg from "../Assets/Registerpage.png";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [Name, SetName] = useState();
   const [MobileNo, SetMobileNo] = useState();
   const [Email, SetEmail] = useState();
   const [Password, SetPassword] = useState();
+  const navigate=useNavigate()
 
   const HandleRegister = async () => {
     try {
-      console.log("h0")
-      const response = await axios
-        .post("http://localhost:8000", {
-          userName: Name,
-          userMobileNo: MobileNo,
-          userEmail: Email,
-          userPassword: Password,
-        })
-        console.log("h1")
-        if (response.status == 409)
-        {
-          console.log("h2")
-          alert("Email or mobile already in use")
-        }
-        else{
-          console.log("h3")
-          console.log(response.status)
-        }
+      const response = await axios.post("http://localhost:8000", {
+        userName: Name,
+        userMobileNo: MobileNo,
+        userEmail: Email,
+        userPassword: Password,
+      });
+        navigate('/Registrationsuccessful')
+        console.log(response.status);
     } catch (e) {
-      console.log(e.message)
+      console.log("Error caught:", e);
+      console.log("Error message:", e.message);
+      if (e.response && e.response.status === 409) {
+        alert("Email or mobile already in use");
+      } else {
+        alert("An error occurred: " + e.message);
+      }
     }
   };
-
+  
   return (
     <>
       <div className="flex space-x-10 items-center justify-center h-screen">
