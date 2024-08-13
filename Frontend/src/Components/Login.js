@@ -1,26 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoginImg from "../Assets/loginImg.jpg";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Login = () => {
+  const navigate = useNavigate();
+
+
   const [userMail, SetuserMail] = useState();
   const [userPassword, SetuserPasssword] = useState();
-  const navigate=useNavigate()
+  const [showPassword, SetshowPassword] = useState("password");
+
+  const showeye = <FaEye />;
+  const notshoweye = <FaEyeSlash />;
+
+  const [Show, SetShow] = useState(<FaEye />);
+  const [ShowValue,SetShowValue] = useState(true)
+
+  
 
   const HandleLogin = async () => {
     try {
-      const response=await axios.post("http://localhost:8000/login", {
+      const response = await axios.post("http://localhost:8000/login", {
         MailorPhone: userMail,
         Password: userPassword,
       });
-      console.log(response.status)
-      
+      console.log(response.status);
+
       //navigation to homepage
-      navigate('/Home')
+      navigate("/Loginsuccessful");
     } catch (e) {
-      alert("invalid user")
+      alert("invalid user");
+    }
+  };
+
+
+  //show password 
+  const HandleVisibility = () => {
+    if(ShowValue) 
+    {
+      SetShowValue(false)
+      SetshowPassword("text")
+       SetShow(notshoweye)
+    }
+    else
+    {
+      SetShow(showeye)
+      SetshowPassword("password")
     }
   };
 
@@ -49,13 +77,21 @@ const Login = () => {
               Password<span className="text-[#ff4040]">*</span>
             </label>
             <br />
-            <input
-              type="password"
-              className="bg-gray-light focus:outline-none p-2 w-full pr-[150px] rounded-md"
-              onChange={(e) => {
-                SetuserPasssword(e.target.value);
-              }}
-            />
+            <div className="flex">
+              <input
+                type={showPassword}
+                className="relative bg-gray-light focus:outline-none p-2 w-[98%] pr-[150px] rounded-l-md"
+                onChange={(e) => {
+                  SetuserPasssword(e.target.value);
+                }}
+              />{" "}
+              <button
+                className="bg-gray-light rounded-r-md pr-[2%]"
+                onClick={HandleVisibility}
+              >
+                {Show}
+              </button>
+            </div>
           </div>
           <div className="pt-2">
             <button
@@ -70,9 +106,11 @@ const Login = () => {
             <a
               href=""
               className="text-[#375C8F] text-decoration-line: underline"
-              onClick={()=>{navigate('/register')}}
+              onClick={() => {
+                navigate("/register");
+              }}
             >
-            Register here
+              Register here
             </a>
           </div>
         </div>
@@ -81,4 +119,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login  
