@@ -1,4 +1,6 @@
 import React from "react";
+import { CgProfile } from "react-icons/cg";
+import { HiDotsVertical } from "react-icons/hi";
 
 function Home() {
   return (
@@ -48,7 +50,20 @@ function Home() {
         </div>
 
         <div className=" w-[75%]">
-          
+          <div className=" bg-pink grid grid-flow-col h-[12%] ">
+            <div className=" justify-items-start">
+              <button className=""><CgProfile className="pl-[2%] text-[60px] pt-[25%] hover:text-yellow " /></button>
+            </div>
+            <div className="grid justify-items-end pr-2">
+              <button><HiDotsVertical className="pl-[2%] text-[30px] pt-[4%] hover:text-yellow" /></button>
+            </div>
+          </div>
+          <div className="bg-green h-[80%] ">
+            
+          </div>
+          <div className="bg-gray-dark h-[8%]">
+
+          </div>
         </div>
       </div>
     </>
