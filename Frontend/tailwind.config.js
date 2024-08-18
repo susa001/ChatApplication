@@ -14,8 +14,9 @@ module.exports = {
       'gray-light': '#d3dce6',
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      sans: ['system-ui', 'ui-sans-serif', 'sans-serif'], // For sans-serif
+        serif: ['system-ui', 'ui-serif', 'serif'],          // For serif
+        mono: ['system-ui', 'ui-monospace', 'monospace'],   // For monospace
     },
     extend: {
       spacing: {
@@ -25,17 +26,9 @@ module.exports = {
       borderRadius: {
         '4xl': '2rem',
       },
-      scrollbarHide: {
-        '&::-webkit-scrollbar': {
-          display: 'none',
-        },
-        '&': {
-          '-ms-overflow-style': 'none', /* IE and Edge */
-          'scrollbar-width': 'none', /* Firefox */
-        },
-      },
-   
-  
+      plugins: [
+        require('tailwind-scrollbar-hide')
+      ],
     }
   },
 }
