@@ -13,7 +13,7 @@ function Home() {
   return (
     <>
       <div className="flex h-screen">
-        <div className="bg-green flex flex-col justify-end p-4">
+        <div className="bg-[#A1E7FF] flex flex-col justify-end p-4">
           <div className="mb-4">
             <button className="">
               <IoSettings className="text-[32px]" />
@@ -39,26 +39,23 @@ function Home() {
             </div>
           </div>
           <div className="grid overflow-y-scroll pt-3 scrollbar-hide">
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            <span className="p-2 bg-blue border border-b-gray-dark">nam1</span>
-            
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light" >nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
+            <span className="p-4 bg-[#DFF2FF] border border-b-gray-light">nam1</span>
           </div>
         </div>
-
         <div className="flex-grow">
-          <div className="bg-pink grid grid-flow-col h-[12%]">
+          <div className=" bg-[#A1E7FF] grid grid-flow-col h-[10%]">
             <div className="justify-items-start">
               <button className="">
                 <CgProfile className="pl-[2%] text-[55px] pt-[25%] hover:text-yellow" />
@@ -70,19 +67,18 @@ function Home() {
               </button>
             </div>
           </div>
-          <div className="bg-green h-[76%]"></div>
-          <div className="bg-gray-dark h-[9%]">
-            <div className="relative flex items-center justify-between">
-              <BsEmojiGrin className="text-[30px]" />
+          <div className="h-[81%]"></div>
+          <div className="bg-[#A1E7FF] h-[9%] fixed bottom-0 w-full flex items-center px-4">
+             <BsEmojiGrin className=" mr-1 text-[30px]" />
               <input 
-                 className="w-[90%] p-2 rounded-md bg-gray-light border-none"
-                 type="text" 
-                 placeholder="Type your message"/>
-              <MdKeyboardVoice className="text-[30px]" />
-           </div>
+              className="w-[59%] p-1 ml-1 rounded-md bg-gray-light border-none"
+              type="text" 
+              placeholder="Type your message"
+              />
+              <MdKeyboardVoice className="text-[30px] ml-1" />
+            </div>
         </div>
      </div>
-   </div>
   </>
   );
 }
